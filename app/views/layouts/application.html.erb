@@ -13,6 +13,31 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    
+    <header class='navigation'>
+      
+      <%= link_to 'Home', '/'  %>
+
+      <% if user_signed_in?  %>
+        <%# <%= link_to 'Food',  user_foods_path(user_id: current_user.id)  %>
+        <%# <%= link_to 'Recipe',  user_recipes_path(user_id: current_user.id)  %> 
+
+        <%# <%= link_to 'Public Recipes',  public_recipes_path(user_id: current_user.id)  %>
+        
+        <%# <%= link_to 'Shopping list', shopping_list_path(user_id: current_user.id) %>
+
+        <%= link_to 'Log Out', user_sign_out_path  %>
+        <strong>
+          <%= current_user.name %>
+        </strong>
+      <% else %>
+        <%= link_to 'Log In', new_user_session_path  %>
+
+        <%= link_to 'Sign Up', new_user_registration_path  %>   
+      <% end %>
+    </header>
+
+
 
     <%= yield %>
   </body>

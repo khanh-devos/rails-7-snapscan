@@ -1,0 +1,11 @@
+<div>
+  
+  <%= link_to 'New group', new_user_group_path(user_id: current_user.id) %>
+
+  <% @groups.each do |group| %>
+
+    <%= render group %>
+
+  <% end %>
+
+</div>

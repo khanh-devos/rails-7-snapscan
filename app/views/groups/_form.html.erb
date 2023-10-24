@@ -1,0 +1,19 @@
+<%= form_with model: @group, url: user_groups_path(user_id: current_user.id), local: true, scope: :group, method: 'post', class: 'form' do |form| %>
+    
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name, autofocus: true, required: true %>
+    </div>
+
+    
+    <div>
+        <%= form.label :icon %>
+        <%= form.text_field :icon, required: true %>
+    </div>
+
+    <div>
+        <%= form.submit "Add" %>
+    </div>
+
+
+<% end %>

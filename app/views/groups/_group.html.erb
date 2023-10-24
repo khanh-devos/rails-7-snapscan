@@ -1,0 +1,9 @@
+<div id="<%= dom_id group %>" >
+  
+  <%= link_to user_group_path(user_id: current_user.id, id: group.id) do %>
+    
+    <img src="<%= group.icon  %>" width="50px" alt="group_images">
+    <strong> <%= group.name.capitalize %> </strong>
+
+  <% end %>
+</div>
