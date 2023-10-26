@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   
   resources :users, only: %i[show] do
-    resources :groups, only: %i[index show new create]
-    resources :expenses, only: %i[show new create]
+    resources :groups, only: %i[index show new create] do
+      resources :expenses, only: %i[show new create]
+    end
   end
   
-  root "groups#index"
+  get '/home', to: "groups#index", as: 'home'
+
+  root "users#splash"
 end

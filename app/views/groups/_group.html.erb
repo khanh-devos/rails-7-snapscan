@@ -1,9 +1,22 @@
 <div id="<%= dom_id group %>" >
-  
+
   <%= link_to user_group_path(user_id: current_user.id, id: group.id) do %>
     
-    <img src="<%= group.icon  %>" width="50px" alt="group_images">
-    <strong> <%= group.name.capitalize %> </strong>
+    <div class="group-item">
 
+      <img src="<%= group.icon  %>" width="50px" alt="group_images">
+
+      <div class='group-item-name-date'>
+        <strong> <%= group.name.capitalize %> </strong>
+        <%= group.created_at.strftime("%d-%m-%Y") %>
+      </div>
+
+      <div class='group-item-sum'>
+        $ <%= group.expenses_groups.reduce(0) {|sum, item| sum + item.amount } %>
+      </div>
+    
+    </div>
   <% end %>
+
+
 </div>

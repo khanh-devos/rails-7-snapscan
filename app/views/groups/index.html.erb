@@ -1,11 +1,14 @@
-<div>
-  
-  <%= link_to 'New group', new_user_group_path(user_id: current_user.id) %>
+<div class="group-page">
 
-  <% @groups.each do |group| %>
+  <div class="group-items-container">
+    <% @groups.each do |group| %>
 
-    <%= render group %>
+      <%= render group %>
 
-  <% end %>
+    <% end %>
+  </div>
 
+  <div class='new-group-link' >
+  <%= link_to 'NEW GROUP', new_user_group_path(user_id: current_user.id), class: 'new-group-link-id' %>
+  </div>
 </div>

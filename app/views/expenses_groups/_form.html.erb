@@ -1,12 +1,17 @@
 <div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>" >
-    <%= f.hidden_field :_destroy %><br />
-        
-    <%= f.label :group_id %>
-    <%= f.select :group_id, @groups %><br />
+    <%= f.hidden_field :_destroy %>
 
-    <%= f.label :amount %>
-    <%= f.number_field :amount %>
+    <div class="wrapper-input-container">
+      <%= f.label :group_id %>
+      <%= f.select :group_id, @groups, class: 'wrapper-input' %>
+      <div></div>
+    </div>
 
-    <button type="button" data-action="nested-form#remove">Remove</button>
+    <div class="wrapper-input-container">
+      <%= f.label :amount %>
+      <%= f.number_field :amount, require: true, class: 'wrapper-input' %>  
+        <button type="button" data-action="nested-form#remove" class="wrapper-btn">X</button>
+    </div><br />
+
   
 </div>
