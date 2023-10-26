@@ -6,7 +6,7 @@ class Expense < ApplicationRecord
   has_many :expenses_groups, inverse_of: :expense, dependent: :destroy
 
   # For nested form
-  accepts_nested_attributes_for :expenses_groups, allow_destroy: true, reject_if: lambda { |attributes|
-                                                                                    attributes['amount'].eql?('0.0')
-                                                                                  }
+  accepts_nested_attributes_for :expenses_groups, 
+    allow_destroy: true, 
+    reject_if: lambda { |attributes| attributes['amount'].eql?('0.0') }
 end
