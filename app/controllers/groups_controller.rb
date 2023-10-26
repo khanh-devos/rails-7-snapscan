@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @title = 'DETAILS'
+    @title = 'DETAILS HERE'
     @group = Group.find(params[:id])
     @expenses_group = ExpensesGroup.where(group_id: params[:id])
       .order(created_at: 'desc').includes(:expense)
