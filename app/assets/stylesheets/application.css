@@ -33,6 +33,10 @@ button {
   }
 }
 
+.down {
+  margin-top: 0.3rem;
+}
+
 body {
   height: 100vh;
   width: 100%;

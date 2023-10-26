@@ -4,14 +4,14 @@
     <% if !url_for.include?('expenses/new')%>
 
       <%= link_to '/home' do %>
-        <span class="material-symbols-outlined sign-up-strong-link">
+        <span class="material-symbols-outlined sign-up-strong-link down">
           arrow_back_ios
         </span>
       <% end %>
 
     <% else %>
       <%= link_to user_group_path(user_id: current_user.id, id: @group.id) do %>
-        <span class="material-symbols-outlined sign-up-strong-link">
+        <span class="material-symbols-outlined sign-up-strong-link down">
           arrow_back_ios
         </span>
       <% end %>
