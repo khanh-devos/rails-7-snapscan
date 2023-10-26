@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User do
-  subject { User.create(
-    name: 'John', 
-    email: 'john@gmail.com', 
-    password: '@manda123'
-    ) }
+  subject do
+    User.create(
+      name: 'John',
+      email: 'john@gmail.com',
+      password: '@manda123'
+    )
+  end
 
   it 'name should be present' do
     subject.name = nil
@@ -30,5 +32,4 @@ RSpec.describe User do
     assc = described_class.reflect_on_association(:expenses)
     expect(assc.macro).to eq :has_many
   end
-
 end

@@ -3,23 +3,23 @@ require 'rails_helper'
 RSpec.describe ExpensesGroup do
   before(:all) do
     @user = User.create(
-        name: 'Peter',
-        email: 'peter@gmail.com', 
-        password: '@manda123'
+      name: 'Peter',
+      email: 'peter@gmail.com',
+      password: '@manda123'
     )
-    
+
     @group = Group.create(user_id: @user.id, name: 'food', icon: 'icon link')
-    @expense = Expense.create(id:1, author_id: @user.id, name: 'exp1')
+    @expense = Expense.create(id: 1, author_id: @user.id, name: 'exp1')
 
     @expense_gr1 = ExpensesGroup.create(
-        expense_id: 1,
-        group_id: @group.id,
-        amount: 10
+      expense_id: 1,
+      group_id: @group.id,
+      amount: 10
     )
     @expense_gr2 = ExpensesGroup.create(
-        expense_id: 1,
-        group_id: @group.id,
-        amount: 20
+      expense_id: 1,
+      group_id: @group.id,
+      amount: 20
     )
   end
 

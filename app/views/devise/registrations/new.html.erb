@@ -1,27 +1,14 @@
 <div class="sign-up-page">
-  <div class="sign-up-header">
-    <%= link_to '/' do %>
-    <span class="material-symbols-outlined sign-up-left">
-      arrow_back_ios
-    </span>
-    <% end %>    
-    
-    <h3 class="sign-up-h3">REGISTER</h3>
-    
-    <strong class="sign-up-strong-link" onclick="document.querySelector('form').submit()">New</strong>
 
+  
 
-  </div>
-
-  <div class='avatar'>
-    <img src="https://villagesonmacarthur.com/wp-content/uploads/2020/12/Blank-Avatar.png" width=70 alt="avatar">
-
-    <a href="#" >Upload image</a>
-
-  </div>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, 
+url: registration_path(resource_name)) do |f| %>
+  
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= render 'header', f:f, title: 'REGISTERATION' %>
+
 
   <div class="field">
     <%# <%= f.label :name %>
@@ -67,9 +54,6 @@
     %>
   </div>
 
-  <div class="actions hidden">
-    <%= f.submit "Sign up", hidden: true %>
-  </div>
 <% end %>
 
 <%# <%= render "devise/shared/links" %>

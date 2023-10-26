@@ -1,0 +1,16 @@
+<div class="sign-up-header">
+    <%= link_to '/' do %>
+        <span class="material-symbols-outlined sign-up-left">
+            arrow_back_ios
+        </span>
+    <% end %>
+    
+    <h3 class="sign-up-h3">
+        <%= title %>
+    </h3>
+
+    <div class="actions">
+        <%= f.submit "#{name}", class: 'sign-up-strong-link' %>
+    </div>
+
+</div>
