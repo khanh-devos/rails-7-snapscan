@@ -30,9 +30,9 @@ RSpec.describe 'Group page', type: 'feature' do
       click_button 'Log in'
     end
 
-    it 'can enter home page with the title TRANSACTIONS' do
+    it 'can enter home page with the title CATEGORIES' do
       visit '/home'
-      expect(page).to have_content('TRANSACTIONS')
+      expect(page).to have_content('CATEGORIES')
     end
 
     it "check button 'Log Out' works fine" do
@@ -41,19 +41,19 @@ RSpec.describe 'Group page', type: 'feature' do
       expect(page).not_to have_content('TRANSACTIONS')
     end
 
-    it "show btn 'NEW GROUP'" do
-      expect(page).to have_link('NEW GROUP')
+    it "show btn 'ADD NEW CATEGORY'" do
+      expect(page).to have_link('ADD NEW CATEGORY')
     end
 
-    it "click btn 'NEW GROUP'" do
-      click_link 'NEW GROUP'
+    it "click btn 'ADD NEW CATEGORY'" do
+      click_link 'ADD NEW CATEGORY'
       expect(page).to have_selector('form', count: 1)
       expect(page).to have_button('Add')
     end
 
     it 'click on one group to visit its details page' do
       visit('/users/100/groups/100')
-      expect(page).to have_content('DETAILS')
+      expect(page).to have_content('CATEGORY DETAILS')
     end
   end
 end

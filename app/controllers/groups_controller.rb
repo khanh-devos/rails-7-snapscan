@@ -1,19 +1,19 @@
 class GroupsController < ApplicationController
   def index
-    @title = 'TRANSACTIONS'
+    @title = 'CATEGORIES'
     @groups = Group.all.where(user_id: current_user.id)
       .order(created_at: 'desc').includes(:expenses_groups)
   end
 
   def show
-    @title = 'DETAILS'
+    @title = 'CATEGORY DETAILS'
     @group = Group.find(params[:id])
     @expenses_group = ExpensesGroup.where(group_id: params[:id])
       .order(created_at: 'desc').includes(:expense)
   end
 
   def new
-    @title = 'NEW GROUP'
+    @title = 'NEW CATEGORY'
   end
 
   def create

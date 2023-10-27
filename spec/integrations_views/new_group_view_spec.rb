@@ -29,10 +29,10 @@ RSpec.describe 'New Group page', type: 'feature' do
 
       click_button 'Log in'
       visit '/home'
-      click_on 'NEW GROUP'
+      click_on 'NEW CATEGORY'
     end
 
-    it 'can enter home page with the title TRANSACTIONS' do
+    it 'can enter home page with the title CATEGORIES' do
       expect(page).to have_selector('form', count: 1)
     end
 

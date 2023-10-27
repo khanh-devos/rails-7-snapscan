@@ -30,7 +30,7 @@ RSpec.describe 'New Expense Page', type: 'feature' do
       click_button 'Log in'
       visit '/home'
       visit '/users/100/groups/100'
-      click_on 'NEW TRANSACTION'
+      click_on 'ADD NEW TRANSACTION'
     end
 
     it 'can enter home page with the title TRANSACTIONS' do

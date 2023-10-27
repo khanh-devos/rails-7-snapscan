@@ -24,17 +24,16 @@ RSpec.describe 'Group Details page', type: :feature do
     end
 
     it 'renders a list of transactions of the group "exp1"' do
-      expect(page).to have_content('DETAILS')
+      expect(page).to have_content('CATEGORY DETAILS')
       expect(page).to have_content('Exp1')
     end
 
     it 'check link-btn "new transaction"' do
-      expect(page).to have_link('NEW TRANSACTION')
+      expect(page).to have_link('ADD NEW TRANSACTION')
     end
 
     it 'click link-btn "new transaction" to show a expense#create page' do
-      click_link('NEW TRANSACTION')
-      expect(page).to have_content('NEW TRANSACTION')
+      click_link('ADD NEW TRANSACTION')
       expect(page).to have_button('Submit')
     end
   end

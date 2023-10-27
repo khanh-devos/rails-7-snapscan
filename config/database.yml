@@ -83,9 +83,9 @@ test:
 #
 production:
   <<: *default
-  host: dpg-ckp90fe2eoec73a4tohg-a
+  host: dpg-cktje6lk4k9c73c2jce0-a
   port: 5432
-  username: rails_recipe_production_user
-  database: rails_recipe_production
-  password: RsXRU5N7ZNYfwZ6TVH2zjJrClk1K31CF
+  database: rails_7_snapscan_db
+  username: rails_7_snapscan_db_user
+  password: mizDsx2krEQg2POjDXTT8fTCY0kiECCl
   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
