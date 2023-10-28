@@ -1,0 +1,33 @@
+<div class="details-page">
+  <div>
+    <div class="details-total-amount">
+      <div>
+        <p><img src="<%= @group.icon  %>" width="50px" alt="group_images">
+        <%= @group.name.upcase %></p>
+      </div>
+
+      
+      <div>
+        <p>TOTAL AMOUNT:</p>
+        <h5 class="strong-black">$ <%= @expenses_group.reduce(0) {|sum, item| sum + item.amount } %></h5>
+      </div>
+
+    </div>
+
+
+    <div class="expenses-group-container control-overflow">
+      <% @expenses_group.each do |expenses_group| %>
+
+        <%= render expenses_group %>
+
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class='new-group-link' >
+  
+    <%= link_to 'ADD NEW TRANSACTION', new_user_group_expense_path(user_id: current_user.id, group_id: @group.id), class: 'new-group-link-id' %>
+  
+  </div>
+</div>

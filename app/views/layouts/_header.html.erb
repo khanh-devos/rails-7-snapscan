@@ -1,0 +1,61 @@
+<div class="sign-up-header">
+  <strong class="sign-up-strong-link" >
+
+    <% if !url_for.include?('expenses/new')%>
+
+      <%= link_to '/home' do %>
+        <span class="material-symbols-outlined sign-up-strong-link down">
+          arrow_back_ios
+        </span>
+      <% end %>
+
+    <% else %>
+      <%= link_to user_group_path(user_id: current_user.id, id: @group.id) do %>
+        <span class="material-symbols-outlined sign-up-strong-link down">
+          arrow_back_ios
+        </span>
+      <% end %>
+
+    <% end %>
+
+  </strong>
+
+  
+    
+
+  <h3 class="sign-up-h3">
+    <%= @title %> 
+  
+  </h3>
+  
+  
+
+  <div class="dropdown">
+    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="material-symbols-outlined sign-up-left">
+        menu
+      </span>
+    </button>
+    
+    
+
+    <ul class="dropdown-menu">
+
+      <li><span class="material-symbols-outlined menu-link">
+        search
+      </span></li>
+
+      <li><%= link_to 'Log Out', user_sign_out_path, class: 'menu-link'  %></li>
+
+      <li><strong >
+        User: <%= current_user.name %>
+      </strong></li>    
+  
+
+    </ul>
+
+      
+      
+  </div>
+
+</div>

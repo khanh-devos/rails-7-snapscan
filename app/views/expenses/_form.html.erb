@@ -1,0 +1,46 @@
+<%= form_with model: @expense,
+  data: {
+    controller: 'nested-form',
+    nested_form_wrapper_selector_value: '.nested-form-wrapper'
+  },
+  url: user_group_expenses_path(user_id: current_user.id, group_id: @group.id), 
+  local: true, 
+  scope: :expense, 
+  method: 'post' do |form| 
+  %>
+    
+    <div>
+        <%= form.text_field :name, autofocus: true, required: true, placeholder: 'Name', class: 'form-input' %>
+    </div>
+    <br/>
+
+    <p>AMOUNT ON EACH GROUP</p>
+    <%= form.fields_for :expenses_groups do |expenses_group_form| %>
+
+      <%= render 'expenses_groups/form', f: expenses_group_form  %>
+      
+    <% end %>
+
+    <%# START ADDING FROM HERE %>
+    <template data-nested-form-target="template">
+      <%= form.fields_for :expenses_groups, ExpensesGroup.new, child_index: 'NEW_RECORD' do |expenses_group_form| %>
+
+        <%= render 'expenses_groups/form', f: expenses_group_form  %>
+      
+      <% end %>
+    </template>
+
+    <!-- Inserted elements will be injected before that target. -->
+    <div data-nested-form-target="target"></div>
+    <button type="button" 
+      data-action="nested-form#add"
+      class="wrapper-btn"
+      >More</button>
+    <%# END ADDING FROM HERE %>
+
+    <div>
+        <%= form.submit "Submit", class: 'form-input' %>
+    </div>
+
+
+<% end %>
